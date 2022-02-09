@@ -39,12 +39,13 @@ jobs:
     - name: Checkmarx CxFlow Action
       uses: checkmarx-ts/checkmarx-cxflow-github-action@9975af7d6b957abec9ee9646effa3fb3b82c5314
       with:
-        project: ${{ secrets.CHECKMARX_PROJECT }}
-        team: ${{ secrets.CHECKMARX_TEAMS }}
-        checkmarx_url: ${{ secrets.CHECKMARX_URL }}
-        checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }}
-        checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
-        checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
+        project: myExpressApp
+        team: CxServer/SP/APAC
+        checkmarx_url: https://cxapactrial.checkmarx.net
+        checkmarx_username: yuuki.endo@checkmarx.com
+        checkmarx_password: Checkmarx!123
+        checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C
+        scan-preset: Checkmarx Default 
         scanners: sast
         params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filterSeverity --cx-flow.filterCategory
     # Upload the Report for CodeQL/Security Alerts
