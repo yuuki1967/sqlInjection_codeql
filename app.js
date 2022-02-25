@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var sql = require("mssql");
 http = require('http');
 //Commented out 1 2
 xpath = require('xpath');
@@ -32,7 +33,6 @@ app.post('/student/', (req, res) =>{
 });
 
 app.get('/:name', function(req, res) {
-  var sql = require("mssql");
 
   //config for the database
   var config = {
