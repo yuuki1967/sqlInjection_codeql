@@ -59,7 +59,7 @@ app.get('/:name', function(req, res) {
     // query to the database and get the records
     var name=req.params.name,
       id=2,
-      sqlQueryString="select * from dbo.students where (standardId='"+id+"' AND studentName='"+name+"')"; // SQL injection
+      sqlQueryString="select * from dbo.students where (standardId='"+id+"' AND studentName='"+name+"')"; // SQL injection 
     request.query(sqlQueryString, function (err, recordset){
       if (err) console.log(err)
         // send records as a response
